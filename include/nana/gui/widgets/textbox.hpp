@@ -245,7 +245,7 @@ namespace nana
 		void set_highlight(const std::string& name, const ::nana::color& fgcolor, const ::nana::color& bgcolor);
 		void erase_highlight(const std::string& name);
 		void set_keywords(const std::string& name, bool case_sensitive, bool whole_word_match, std::initializer_list<std::wstring> kw_list);
-		void set_keywords(const std::string& name, bool case_sensitive, bool whole_word_match, std::initializer_list<std::string> kw_list_utf8);
+		void set_keywords(const std::string& name, bool case_sensitive, bool whole_word_match, std::vector<std::string> kw_list_utf8);
 		void erase_keyword(const std::string& kw);
 #ifdef __cpp_char8_t
 		void set_highlight(std::u8string_view name, const ::nana::color& fgcolor, const ::nana::color& bgcolor);

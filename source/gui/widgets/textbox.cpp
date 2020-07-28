@@ -747,7 +747,7 @@ namespace nana
 			}
 		}
 
-		void textbox::set_keywords(const std::string& name, bool case_sensitive, bool whole_word_match, std::initializer_list<std::string> kw_list_utf8)
+		void textbox::set_keywords(const std::string& name, bool case_sensitive, bool whole_word_match, std::vector<std::string> kw_list_utf8)
 		{
 			internal_scope_guard lock;
 			auto editor = get_drawer_trigger().editor();
