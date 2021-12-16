@@ -707,6 +707,7 @@ namespace nana
 
 			bool make_adjust(node_type * node, int reason)
 			{
+				return false;
 				if(!node) return false;
 
 				auto & tree = attr.tree_cont;
@@ -1023,6 +1024,7 @@ namespace nana
 
 			void show_tooltip_window(const rectangle& text_r)
 			{
+				return;
 				if(text_r.right() > visible_w_pixels())
 				{
 					node_state.tooltip = new tooltip_window(data.widget_ptr->handle(), text_r);
