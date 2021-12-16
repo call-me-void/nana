@@ -4120,12 +4120,12 @@ namespace nana
 					essence_->item_height()
 				};
 
-				essence_->graph->rectangle(r, false, essence_->scheme_ptr->item_selected_border);
+				// essence_->graph->rectangle(r, false, essence_->scheme_ptr->item_selected_border);
 
-				essence_->graph->palette(false, essence_->scheme_ptr->background);
-				paint::draw(*essence_->graph).corner(r, 1);
+				// essence_->graph->palette(false, essence_->scheme_ptr->background);
+				// paint::draw(*essence_->graph).corner(r, 1);
 
-				essence_->graph->rectangle(r.pare_off(1), false);
+				//essence_->graph->rectangle(r.pare_off(1), false);
 			}
 		private:
 			essence * const essence_;
