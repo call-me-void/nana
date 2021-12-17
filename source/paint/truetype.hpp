@@ -7,6 +7,7 @@
 #include <filesystem>
 #include <optional>
 #include <vector>
+#include <optional>
 
 namespace nana::paint::detail
 {
