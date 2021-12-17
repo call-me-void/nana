@@ -25,6 +25,8 @@
 
 #include "c++defines.hpp"
 
+#define NANA_LATEST
+
 //The following basic configurations are ignored when NANA_IGNORE_CONF is defined.
 //The NANA_IGNORE_CONF may be specified by CMake generated makefile.
 #ifndef NANA_IGNORE_CONF
