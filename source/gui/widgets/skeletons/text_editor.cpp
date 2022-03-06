@@ -2034,7 +2034,7 @@ namespace nana::widgets::skeletons
 		const auto text_top = _m_text_top_base() - static_cast<int>(impl_->cview->origin().y % line_height());
 		//Render the content when the text isn't empty or the window has got focus,
 		//otherwise draw the tip string.
-		if ((false == textbase().empty()) || has_focus)
+		if ((false == textbase().empty()))
 		{
 			auto text_pos = _m_render_text(fgcolor);
 
