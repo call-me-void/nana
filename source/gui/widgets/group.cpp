@@ -196,6 +196,12 @@ group::~group()
 		return *this;
 	}
 
+	group& group::caption_color(color c)
+	{
+		impl_->caption.fgcolor(c);
+		return *this;
+	}
+
 	group& group::radio_mode(bool enable)
 	{
 		_THROW_IF_EMPTY()

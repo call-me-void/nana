@@ -88,6 +88,7 @@ namespace nana{
 		/// Modifies the alignment of the title
 		group& caption_align(align position);
 		group& caption_background_mode(background_mode mode);
+		group& caption_color(color c);
 
 		/// Enables/disables the radio mode which is single selection
 		group& radio_mode(bool);
