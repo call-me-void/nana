@@ -379,6 +379,10 @@ namespace nana
 			{
 				bool enb = widget_->enabled();
 
+				auto clr_from = this->widget_ptr()->bgcolor();
+				auto clr_to = clr_from.blend(colors::white, .1);
+				graph_->gradual_rectangle(::nana::rectangle(graph_->size()).pare_off(1), clr_from, clr_to, true);
+
 				_m_text_area(widget_->size());
 				editor_->render(state_.focused);
 				
