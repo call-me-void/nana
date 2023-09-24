@@ -1603,6 +1603,7 @@ namespace nana
 				comp_attribute_t attr;
 				if(compset->comp_attribute(component::expander, attr))
 				{
+					auto scheme_ptr = static_cast<::nana::treebox::scheme_type*>(api::dev::get_scheme(window_handle_));
 					facade<element::arrow> arrow("solid_triangle");
 					arrow.direction(direction::southeast);
 					if (!compset->item_attribute().expended)
@@ -1613,8 +1614,9 @@ namespace nana
 					auto r = attr.area;
 					r.y += (attr.area.height - 16) / 2;
 					r.width = r.height = 16;
-					arrow.draw(graph, api::bgcolor(window_handle_), (attr.mouse_pointed ? colors::deep_sky_blue : colors::black), r, element_state::normal);
+					arrow.draw(graph, api::bgcolor(window_handle_), (attr.mouse_pointed ? scheme_ptr->expander_hover : scheme_ptr->expander), r, element_state::normal);
 				}
+				
 			}
 
 			void crook(graph_reference graph, const compset_interface * compset) const override
