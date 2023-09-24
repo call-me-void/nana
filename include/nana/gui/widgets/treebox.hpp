@@ -70,6 +70,9 @@ namespace nana
 				color_proxy item_bg_selected_and_highlighted{ static_cast<color_rgb>(0xC4E8FA) };  ///< item selected and highlighted: background color
 				color_proxy item_fg_selected_and_highlighted{ static_cast<color_rgb>(0xB6E6FB) };  ///< item selected and highlighted: foreground color
 
+				color_proxy expander_hover{ colors::deep_sky_blue };  ///< expander arrow hover color
+				color_proxy expander{ colors::black };  ///< expander arrow color
+
 				unsigned item_offset{ 16 }; ///< item position displacement in pixels
 				unsigned text_offset{ 4 }; ///< text position displacement in pixels
 				unsigned icon_size{ 16 }; ///< icon size in pixels
