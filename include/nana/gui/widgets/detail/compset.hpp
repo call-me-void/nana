@@ -68,8 +68,7 @@ namespace nana{	namespace widgets{ namespace detail
 		virtual bool enabled(component_t) const = 0;
 
 		/// Height of an item, in pixels.
-		//	this method is content-indepented, this feature is easy for implementation.
-		virtual unsigned item_height(graph_reference) const = 0;
+		virtual unsigned item_height(graph_reference, const item_attribute_t& attr) const = 0;
 
 		/// Width of an item, in pixels
 		virtual unsigned item_width(graph_reference, const item_attribute_t&) const = 0;
