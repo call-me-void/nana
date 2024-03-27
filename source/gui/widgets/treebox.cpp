@@ -114,7 +114,7 @@ namespace nana
 			{
 				item_r_.x = item_r_.y = 0;
 				item_r_.width = placer_->item_width(*this->graph_, item_attr_);
-				item_r_.height = placer_->item_height(*this->graph_);
+				item_r_.height = placer_->item_height(*this->graph_, item_attr_);
 
 				comp_attribute_t attr;
 				if(comp_attribute(component::text, attr))
@@ -263,7 +263,7 @@ namespace nana
 					impl_->assign_node_attr(node_attr_, iterated_node_);
 					node_r_.x = node_r_.y = 0;
 					node_r_.width = comp_placer->item_width(*impl_->data.graph, node_attr_);
-					node_r_.height = comp_placer->item_height(*impl_->data.graph);
+					node_r_.height = comp_placer->item_height(*impl_->data.graph, node_attr_);
 
 					auto renderer = impl_->data.renderer;
 					renderer->begin_paint(*impl_->data.widget_ptr);
@@ -609,7 +609,7 @@ namespace nana
 
 			std::size_t screen_capacity(bool completed) const
 			{
-				auto const item_px = data.comp_placer->item_height(*data.graph);
+				auto const item_px = data.comp_placer->item_height(*data.graph, {});
 				auto screen_px = data.graph->size().height - (margin_top_bottom() << 1);
 
 				if (completed || ((screen_px % item_px) == 0))
@@ -940,7 +940,7 @@ namespace nana
 
 			std::size_t max_allowed() const
 			{
-				return (data.graph->height() / data.comp_placer->item_height(*data.graph));
+				return (data.graph->height() / data.comp_placer->item_height(*data.graph, {}));
 			}
 
 			nana::paint::image* image(const node_type* node)
@@ -1473,7 +1473,7 @@ namespace nana
 				return true;
 			}
 
-			virtual unsigned item_height(graph_reference graph) const override
+			virtual unsigned item_height(graph_reference graph, const item_attribute_t& attr) const override
 			{
 				auto m = std::max((enable_crook_ ? scheme_.crook_size : 0), (enable_icon_ ? scheme_.icon_size : 0));
 
@@ -1704,7 +1704,7 @@ namespace nana
 			auto & comp_placer = impl_->data.comp_placer;
 
 			node_r.width = comp_placer->item_width(*impl_->data.graph, node_attr_);
-			node_r.height = comp_placer->item_height(*impl_->data.graph);
+			node_r.height = comp_placer->item_height(*impl_->data.graph, node_attr_);
 
 			if ((pos_.y < item_pos_.y + static_cast<int>(node_r.height)) && (pos_.y >= item_pos_.y))
 			{
