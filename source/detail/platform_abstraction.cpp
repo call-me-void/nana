@@ -748,6 +748,11 @@ namespace nana
 			fontbase_.clear();
 		}
 
+		void clear_fonts()
+		{
+			fontbase_.clear();
+		}
+
 		// Checks whether there is a font that still has been refered.
 		void check_fonts()
 		{
@@ -1266,6 +1271,7 @@ namespace nana
 		auto & r = platform_storage();
 
 		r.font.reset();
+		r.font_svc.clear_fonts();
 		r.font_svc.check_fonts();
 
 		delete data::storage;
